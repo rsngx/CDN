@@ -1,0 +1,97 @@
+{
+  "message": "",
+  "result": [
+    {
+    "path": "/",
+    "name": "index",
+    "component": "BasicLayout",
+    "meta": { "title": "首页" },
+    "redirect": "/service/test",
+    "children": [
+      {
+        "path": "/sys",
+        "name": "sys",
+        "component": "PageView",
+        "redirect": "/sys/user-list",
+        "meta": { "title": "系统管理", "icon": "table", "permission": [ "sys" ] },
+        "children": [
+          {
+            "path": "/sys/UserList",
+            "name": "UserList",
+            "hidechildrenInMenu": true,
+            "component": "() => import('@/views/sys/UserList')",
+            "meta": { "title": "用户管理", "keepAlive": true, "permission": [ "sys" ], "hiddenHeaderContent": true }
+          },
+          {
+            "path": "/sys/MenuList",
+            "name": "MenuList",
+            "hidechildrenInMenu": true,
+            "component": "() => import('@/views/sys/MenuList')",
+            "meta": { "title": "菜单管理", "keepAlive": true, "permission": [ "sys" ], "hiddenHeaderContent": true }
+          },
+          {
+            "path": "/sys/OrgList",
+            "name": "OrgList",
+            "hidechildrenInMenu": true,
+            "component": "() => import('@/views/sys/OrgList')",
+            "meta": { "title": "部门管理", "keepAlive": true, "permission": [ "sys" ], "hiddenHeaderContent": true }
+          },
+          {
+            "path": "/sys/RoleList",
+            "name": "RoleList",
+            "hideChildrenInMenu": true,
+            "component": "() => import('@/views/sys/RoleList')",
+            "meta": { "title": "角色管理", "keepAlive": true, "permission": [ "sys" ], "hiddenHeaderContent": true  }
+          },
+          {
+            "path": "/sys/LogList",
+            "name": "LogList",
+            "hideChildrenInMenu": true,
+            "component": "() => import('@/views/sys/LogList')",
+            "meta": { "title": "系统日志", "keepAlive": true, "permission": [ "sys" ], "hiddenHeaderContent": true }
+          },
+          {
+            "path": "/sys/SubSystemList",
+            "name": "SubSystem",
+            "component": "() => import('@/views/sys/SubSystemList')",
+            "meta": { "title": "子系统维护", "keepAlive": true, "permission": [ "sys" ], "hiddenHeaderContent": true }
+          },
+          {
+            "path": "/sys/NotList",
+            "name": "NotList",
+            "component": "() => import('@/views/sys/NotList')",
+            "meta": { "title": "公告页面", "keepAlive": true, "permission": [ "sys" ], "hiddenHeaderContent": true }
+          },
+          {
+            "path": "/sys/Dictionary",
+            "name": "Dictionary",
+            "component": "() => import('@/views/sys/Dictionary')",
+            "meta": { "title": "字典页面", "keepAlive": true, "permission": [ "sys" ], "hiddenHeaderContent": true }
+          }
+        ]
+      },
+      {
+        "path": "/service",
+        "name": "test",
+        "component": "PageView",
+        "redirect": "/sys/test",
+        "meta": { "title": "业务功能", "icon": "form", "permission": [ "service" ] },
+        "children": [
+          {
+            "path": "/service/test",
+            "name": "test",
+            "hidechildrenInMenu": true,
+            "component": "() => import('@/views/service/test')",
+            "meta": { "title": "测试页面", "keepAlive": true, "permission": [ "service" ], "hiddenHeaderContent": true }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "path": "*", "redirect": "/404", "hidden": true
+  }
+  ],
+  "status": 200,
+  "timestamp": 1534844188679
+}
